@@ -70,12 +70,12 @@ export default function PickupLineGenerator() {
               <>
               <div className="mt-6">
                 <h2 className="text-lg font-semibold">Your Pickup Line 1:</h2>
-                <p className="mt-2 text-gray-600">{result.output2}</p>
+                <p className="mt-3 text-gray-600">{result.output2}</p>
               </div>
               <div className="mt-6">
                 <h2 className="text-lg font-semibold">Your Pickup Line 2:</h2>
                 <p className="mt-2 text-gray-600">{result.output1}</p>
-              </div>
+              </div> 
               </>
               
             )}
