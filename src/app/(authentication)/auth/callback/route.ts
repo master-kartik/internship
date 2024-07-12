@@ -21,6 +21,7 @@ export async function GET(request: Request) {
           },
           remove(name: string, options: CookieOptions) {
             cookieStore.delete({ name, ...options });
+            NextResponse.redirect(`${origin}`);
           },
         },
       }
