@@ -9,7 +9,7 @@ const replicate = new Replicate({
 export async function generatePickupLine(
   crush: string,
   style: string
-): Promise<string> {
+): Promise<{ output1: string; output2: string }> {
   try {
     const input = {
       prompt: `Generate a ${style} pickup line for someone with these characteristics: ${crush}. The pickup line should be creative and relevant to the given information.`,
@@ -35,8 +35,7 @@ export async function generatePickupLine(
       output2 += event.toString();
     }
 
-    console.log(output1);
-    return {
+    return { 
       output1: output1,
       output2: output2,
     };

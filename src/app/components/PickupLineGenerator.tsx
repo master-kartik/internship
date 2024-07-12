@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { generatePickupLine } from "@/actions/generate-pickup-line";
 import logout from "@/actions/logout";
 import Image from "next/image";
+
 export default function PickupLineGenerator() {
   const [crush, setCrush] = useState("");
   const [style, setStyle] = useState("");
@@ -23,7 +24,11 @@ export default function PickupLineGenerator() {
 
     try {
       const data = await generatePickupLine(crush, style);
-      setResult(data);
+      if (typeof data === "object" && "output1" in data && "output2" in data) {
+        setResult(data);
+      } else {
+        throw new Error("Invalid data format");
+      }
     } catch (error) {
       console.error("Error:", error);
       setResult(null);
