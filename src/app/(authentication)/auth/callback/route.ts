@@ -21,7 +21,7 @@ export async function GET(request: Request) {
           },
           remove(name: string, options: CookieOptions) {
             cookieStore.delete({ name, ...options });
-            NextResponse.redirect(`https://1811-labs-pickup-git-master-master-kartiks-projects.vercel.app/`);
+            
           },
         },
       }

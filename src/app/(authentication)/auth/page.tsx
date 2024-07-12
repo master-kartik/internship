@@ -32,7 +32,7 @@ const AuthPage = () => {
     await supabaseBrowserClient.auth.signInWithOAuth({
       provider,
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `https://1811-labs-pickup-git-master-master-kartiks-projects.vercel.app/auth/callback`,
       },
     });
     setAuthenticating(false);
